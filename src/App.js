@@ -9,11 +9,11 @@ import { NoPage } from "./routes/noPage/NoPage"
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="registration" element={<Rejestration />}/>
-      <Route path="login" element={<Login />}/>
-      <Route path="store" element={<Store />}/>
-      <Route path="admin" element={<Admin />}/>
+      <Route path="/cubelunch/" element={<Home />} />
+      <Route path="/cubelunch/registration" element={<Rejestration />}/>
+      <Route path="/cubelunch/login" element={<Login />}/>
+      <Route path="/cubelunch/store" element={<Store />}/>
+      <Route path="/cubelunch/admin" element={<Admin />}/>
       <Route path="*" element={<NoPage />} />
     </Routes>
   )
