@@ -1,8 +1,9 @@
 import { Background } from "../lib/Background"
+import { changeWindowLocation } from "../lib/direcroty"
 
 export const NoPage = () => {
   window.addEventListener(`click`, () => {
-    window.location.pathname = "/"
+    changeWindowLocation(``)
   })
 
   return (

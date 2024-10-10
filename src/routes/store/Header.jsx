@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { post } from "../lib/post"
+import { changeWindowLocation } from "../lib/direcroty"
 
 export const Header = () => {
   const [user, setUser] = useState(null)
@@ -40,7 +41,7 @@ export const Header = () => {
         style={inputStyle}
         onClick={() => {
           localStorage.clear()
-          window.location.pathname = "login"
+          changeWindowLocation("login")
         }}
         value="Wyloguj"
       />

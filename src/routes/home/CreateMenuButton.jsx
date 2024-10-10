@@ -1,9 +1,11 @@
+import { changeWindowLocation } from "../lib/direcroty"
+
 export const CreateMenuButton = ({ value, path }) => {
   return (<input
     type="submit"
     value={value}
     onClick={() => {
-      window.location.pathname = path
+      changeWindowLocation(path)
     }}
     style={{
       margin: 16,

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { post } from "../lib/post"
 import { Background } from "../lib/Background"
+import { changeWindowLocation } from "../lib/direcroty"
 
 export const Rejestration = () => {
   const [form, setForm] = useState({
@@ -93,7 +94,7 @@ export const Rejestration = () => {
             console.log(response)
           
             if(response.success) {
-              window.location.pathname = "login"
+              changeWindowLocation(`login`)
             }
           }}
         />

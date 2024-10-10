@@ -1,3 +1,4 @@
+import { changeWindowLocation } from "./direcroty"
 import { post } from "./post"
 
 export const autologin = async () => {
@@ -5,13 +6,13 @@ export const autologin = async () => {
     const { path, success } = await post("login/auto")
 
     if(success) {
-      window.location.pathname = path
+      changeWindowLocation(path)
     } else {
-      window.location.pathname = "login"
+      changeWindowLocation(`login`)
       localStorage.clear()
 
       if(!window.location.pathname == `login`) {
-        window.location.pathname = `login`
+        changeWindowLocation(`login`)
       } else {
         window.localStorage.setItem(`autologin`, `false`)
       }
