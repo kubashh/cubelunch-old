@@ -8,6 +8,12 @@ export const post = async (path, dataToSend = {}) => {
     body: JSON.stringify(dataToSend)
   })
 
+  if(!response) {
+    console.error(`nie udało się połączyć z serwerem`)
+
+    return null
+  }
+
   const data = await response.json()
 
   return data
