@@ -1,3 +1,3 @@
 # CubeLunch
 
-Usprawniamy obiady w szkole
+Usprawnijmy szkolne obiadki.
