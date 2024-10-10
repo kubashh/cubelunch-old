@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/cubelunch/static/js/main.7ae6baef.js",
+    "main.js": "/cubelunch/static/js/main.b0bbc029.js",
     "index.html": "/cubelunch/index.html",
-    "main.7ae6baef.js.map": "/cubelunch/static/js/main.7ae6baef.js.map"
+    "main.b0bbc029.js.map": "/cubelunch/static/js/main.b0bbc029.js.map"
   },
   "entrypoints": [
-    "static/js/main.7ae6baef.js"
+    "static/js/main.b0bbc029.js"
   ]
 }
