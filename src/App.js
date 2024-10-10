@@ -5,6 +5,7 @@ import { Rejestration } from "./routes/registration/Registration"
 import { Store } from "./routes/store/Store"
 import { Admin } from "./routes/admin/Admin"
 import { NoPage } from "./routes/noPage/NoPage"
+import { directory } from "./routes/lib/direcroty"
 
 export const App = () => {
   return (
