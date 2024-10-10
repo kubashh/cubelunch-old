@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cubelunch/static/css/main.9a3389a4.css",
-    "main.js": "/cubelunch/static/js/main.6c36696c.js",
+    "main.js": "/cubelunch/static/js/main.a0fd2dda.js",
     "index.html": "/cubelunch/index.html",
     "main.9a3389a4.css.map": "/cubelunch/static/css/main.9a3389a4.css.map",
-    "main.6c36696c.js.map": "/cubelunch/static/js/main.6c36696c.js.map"
+    "main.a0fd2dda.js.map": "/cubelunch/static/js/main.a0fd2dda.js.map"
   },
   "entrypoints": [
     "static/css/main.9a3389a4.css",
-    "static/js/main.6c36696c.js"
+    "static/js/main.a0fd2dda.js"
   ]
 }
