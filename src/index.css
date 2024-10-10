@@ -1,0 +1,13 @@
+body {
+  border: 0;
+  margin: 0;
+}
+
+body, input {
+  background-color: black;
+  color: white;
+}
+
+input[type=button], input[type=file] {
+  cursor: pointer;
+}
