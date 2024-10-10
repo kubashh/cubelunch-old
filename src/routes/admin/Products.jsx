@@ -4,6 +4,14 @@ import { Product } from "./Product"
 const products = await post("products/get")
 
 export const Products = () => {
+  if(!products) {
+    return (
+      <div>
+        <h1>Nie udało się połączyć z serwerem</h1>
+      </div>
+    )
+  }
+
   const productsElement = []
 
   for(const product of products) {
