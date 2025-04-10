@@ -5,37 +5,34 @@ import { post } from "../lib/post"
 export const Products = () => {
   const [products, setProducts] = useState(null)
   useEffect(() => {
-    post(`products/get`)
-    .then(data => {
+    post(`products/get`).then((data) => {
       setProducts(data)
     })
   }, [])
 
   const [category, setCategory] = useState("")
 
-  if(!products) {
-    return (
-      <div>
-        Loading...
-      </div>
-    )
+  if (!products) {
+    return <div>Loading...</div>
   }
 
   const productsElement = []
   const categoryOptions = []
 
-  for(const product of products) {
+  for (const product of products) {
     const { name, category, cost, src, id } = product
-    productsElement.push(<Product
-      name={name}
-      category={category}
-      cost={cost}
-      src={src}
-      id={id}
-      key={id}
-    />)
+    productsElement.push(
+      <Product
+        name={name}
+        category={category}
+        cost={cost}
+        src={src}
+        id={id}
+        key={id}
+      />
+    )
 
-    if(!categoryOptions.includes(category)) {
+    if (!categoryOptions.includes(category)) {
       categoryOptions.push(category)
     }
   }
@@ -43,9 +40,9 @@ export const Products = () => {
   const showCategories = (category) => {
     const newProducts = []
 
-    for(const product of productsElement) {
+    for (const product of productsElement) {
       const { props } = product
-      if(props.category === category) {
+      if (props.category === category) {
         newProducts.push(product)
       }
     }
@@ -59,15 +56,15 @@ export const Products = () => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        overflowY: 'scroll',
-        width: "100vw"
+        overflowY: "scroll",
+        width: "100vw",
       }}
     >
       <div
         style={{
           position: "absolute",
           left: 60,
-          top: 20
+          top: 20,
         }}
       >
         <select
@@ -77,7 +74,7 @@ export const Products = () => {
             padding: "6px 12px",
             fontSize: 20,
             backgroundColor: "#333",
-            color: "white"
+            color: "white",
           }}
           onChange={(event) => {
             event.preventDefault()
@@ -85,19 +82,18 @@ export const Products = () => {
           }}
         >
           <option value="">Wszystkie</option>
-          {categoryOptions.map((categoryValue) =>  {
+          {categoryOptions.map((categoryValue) => {
             return (
-              <option
-                value={categoryValue}
-                key={categoryValue}
-              >
+              <option value={categoryValue} key={categoryValue}>
                 {categoryValue}
               </option>
             )
           })}
         </select>
       </div>
-      {!categoryOptions.includes(category) ? productsElement : showCategories(category)}
+      {!categoryOptions.includes(category)
+        ? productsElement
+        : showCategories(category)}
     </div>
   )
 }

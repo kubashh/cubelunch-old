@@ -11,20 +11,20 @@ export const resizeScrImage = (src, newSize, callback) => {
     let height = image.height
 
     const aspectRatio = width / height
-  
+
     let x = 0
     let y = 0
 
     let newWidth = newSize
     let newHeight = newSize
 
-    if(width > height) {
+    if (width > height) {
       newWidth *= aspectRatio
     } else {
       newHeight *= aspectRatio
     }
 
-    if(width > height) {
+    if (width > height) {
       x = (newSize - newWidth) / 2
     } else {
       y = (newSize - newHeight) / 2

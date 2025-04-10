@@ -8,11 +8,16 @@ export const Product = ({ name, cost, src, category, id }) => {
     name: name,
     cost: cost,
     src: src,
-    category: category
+    category: category,
   })
 
   const isEdit = () => {
-    return form.name !== name || form.cost !== cost || form.category !== category || form.src !== src
+    return (
+      form.name !== name ||
+      form.cost !== cost ||
+      form.category !== category ||
+      form.src !== src
+    )
   }
 
   const inputStyle = {
@@ -20,7 +25,7 @@ export const Product = ({ name, cost, src, category, id }) => {
     borderRadius: 12,
     backgroundColor: "#333",
     padding: "6px 12px",
-    fontSize: 20
+    fontSize: 20,
   }
 
   return (
@@ -28,7 +33,7 @@ export const Product = ({ name, cost, src, category, id }) => {
       style={{
         display: "flex",
         justifyContent: "space-between",
-        margin: "10px 0"
+        margin: "10px 0",
       }}
     >
       <input
@@ -38,7 +43,7 @@ export const Product = ({ name, cost, src, category, id }) => {
         onChange={(event) => {
           setForm({
             ...form,
-            name: event.target.value
+            name: event.target.value,
           })
         }}
       />
@@ -49,7 +54,7 @@ export const Product = ({ name, cost, src, category, id }) => {
         onChange={(event) => {
           setForm({
             ...form,
-            category: event.target.value
+            category: event.target.value,
           })
         }}
       />
@@ -60,7 +65,7 @@ export const Product = ({ name, cost, src, category, id }) => {
         onChange={(event) => {
           setForm({
             ...form,
-            cost: event.target.value
+            cost: event.target.value,
           })
         }}
       />
@@ -70,7 +75,7 @@ export const Product = ({ name, cost, src, category, id }) => {
           padding: 0,
           display: "flex",
           alignItems: "center",
-          height: 40
+          height: 40,
         }}
       >
         <img
@@ -82,14 +87,14 @@ export const Product = ({ name, cost, src, category, id }) => {
             ...inputStyle,
             padding: 0,
             borderRadius: "10px 0 0 10px",
-            marginRight: 10
+            marginRight: 10,
           }}
         />
         <input
           type="file"
           style={{
             ...inputStyle,
-            padding: 0
+            padding: 0,
           }}
           onChange={(event) => {
             configureImage(event.target.files[0], form, setForm)
@@ -103,16 +108,16 @@ export const Product = ({ name, cost, src, category, id }) => {
           ...inputStyle,
           backgroundColor: "black",
           color: !isEdit() && "gray",
-          cursor: !isEdit() && "default"
+          cursor: !isEdit() && "default",
         }}
         onClick={async (event) => {
           event.preventDefault()
-          if(isEdit()) {
+          if (isEdit()) {
             const response = await post("products/edit", {
-              product: form
+              product: form,
             })
 
-            if(response.success) {
+            if (response.success) {
               document.location.reload()
             }
           }
@@ -123,17 +128,17 @@ export const Product = ({ name, cost, src, category, id }) => {
         value="Usuń"
         style={{
           ...inputStyle,
-          backgroundColor: "black"
+          backgroundColor: "black",
         }}
         onClick={async (event) => {
           event.preventDefault()
           const response = await post("products/remove", {
             product: {
-              id: id
-            }
+              id: id,
+            },
           })
 
-          if(response.success) {
+          if (response.success) {
             document.location.reload()
           }
         }}

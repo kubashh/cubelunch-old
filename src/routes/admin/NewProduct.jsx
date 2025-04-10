@@ -7,7 +7,7 @@ export const NewProduct = () => {
     name: "",
     cost: "",
     src: "/images/defaultImage.png",
-    category: ""
+    category: "",
   })
 
   const inputStyle = {
@@ -15,7 +15,7 @@ export const NewProduct = () => {
     border: 0,
     borderRadius: 10,
     padding: "6px 12px",
-    fontSize: 20
+    fontSize: 20,
   }
 
   return (
@@ -25,19 +25,19 @@ export const NewProduct = () => {
         borderRadius: 20,
         backgroundColor: "#333",
         display: "grid",
-        gridTemplateColumns: "1fr 400px"
+        gridTemplateColumns: "1fr 400px",
       }}
     >
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          padding: 16
+          padding: 16,
         }}
       >
         <div
           style={{
-            fontSize: 50
+            fontSize: 50,
           }}
         >
           Nowy Produkt
@@ -50,7 +50,7 @@ export const NewProduct = () => {
           onChange={(event) => {
             setForm({
               ...form,
-              name: event.target.value
+              name: event.target.value,
             })
           }}
         />
@@ -62,7 +62,7 @@ export const NewProduct = () => {
           onChange={(event) => {
             setForm({
               ...form,
-              category: event.target.value
+              category: event.target.value,
             })
           }}
         />
@@ -74,7 +74,7 @@ export const NewProduct = () => {
           onChange={(event) => {
             setForm({
               ...form,
-              cost: event.target.value
+              cost: event.target.value,
             })
           }}
         />
@@ -92,9 +92,9 @@ export const NewProduct = () => {
           onClick={async (event) => {
             event.preventDefault()
             await post("products/add", {
-              product: form
+              product: form,
             })
-            
+
             document.location.reload()
           }}
         />
@@ -105,7 +105,7 @@ export const NewProduct = () => {
         alt="obraz"
         id="imageOutput"
         style={{
-          borderRadius: "0 10px 10px 0"
+          borderRadius: "0 10px 10px 0",
         }}
       />
     </div>

@@ -7,7 +7,7 @@ export const Rejestration = () => {
   const [form, setForm] = useState({
     login: ``,
     email: ``,
-    password: ``
+    password: ``,
   })
 
   const inputsStyle = {
@@ -15,7 +15,7 @@ export const Rejestration = () => {
     border: 0,
     borderRadius: 20,
     padding: "8px 16px",
-    fontSize: 20
+    fontSize: 20,
   }
 
   return (
@@ -29,7 +29,7 @@ export const Rejestration = () => {
           width: 400,
           borderRadius: 20,
           padding: "10px 30px",
-          marginTop: 100
+          marginTop: 100,
         }}
         onSubmit={(event) => {
           event.preventDefault()
@@ -40,7 +40,7 @@ export const Rejestration = () => {
           style={{
             ...inputsStyle,
             fontWeight: "bold",
-            fontSize: 30
+            fontSize: 30,
           }}
         >
           Rejestracja
@@ -54,7 +54,7 @@ export const Rejestration = () => {
             event.preventDefault()
             setForm({
               ...form,
-              login: event.target.value
+              login: event.target.value,
             })
           }}
         />
@@ -67,7 +67,7 @@ export const Rejestration = () => {
             event.preventDefault()
             setForm({
               ...form,
-              email: event.target.value
+              email: event.target.value,
             })
           }}
         />
@@ -80,7 +80,7 @@ export const Rejestration = () => {
             event.preventDefault()
             setForm({
               ...form,
-              password: event.target.value
+              password: event.target.value,
             })
           }}
         />
@@ -90,10 +90,10 @@ export const Rejestration = () => {
           value="Zarejestruj"
           onClick={async () => {
             const response = await post("registration", form)
-          
+
             console.log(response)
-          
-            if(response.success) {
+
+            if (response.success) {
               changeWindowLocation(`login`)
             }
           }}
@@ -104,9 +104,11 @@ export const Rejestration = () => {
             textAlign: "right",
             textDecoration: "none",
             color: "white",
-            marginTop: 10
+            marginTop: 10,
           }}
-        >Zaloguj się</a>
+        >
+          Zaloguj się
+        </a>
       </from>
     </center>
   )

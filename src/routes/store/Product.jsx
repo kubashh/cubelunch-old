@@ -10,19 +10,19 @@ export const Product = ({ name, cost, src, category, id }) => {
         margin: 32,
         borderRadius: 32,
         display: "grid",
-        gridTemplateRows: "30px 1fr 30px"
+        gridTemplateRows: "30px 1fr 30px",
       }}
     >
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
         }}
       >
         <div
           style={{
             fontSize: 20,
-            margin: 16
+            margin: 16,
           }}
         >
           {name}
@@ -30,7 +30,7 @@ export const Product = ({ name, cost, src, category, id }) => {
         <div
           style={{
             fontSize: 20,
-            margin: 16
+            margin: 16,
           }}
         >
           {cost}
@@ -41,18 +41,10 @@ export const Product = ({ name, cost, src, category, id }) => {
           justifySelf: "center",
           alignSelf: "center",
           width: 200,
-          height: 200
+          height: 200,
         }}
       >
-        <img
-          src={src}
-          alt="Obraz"
-          width={200}
-          height={200}
-          style={{
-
-          }}
-        />
+        <img src={src} alt="Obraz" width={200} height={200} style={{}} />
       </div>
       <div>
         <input
@@ -64,16 +56,16 @@ export const Product = ({ name, cost, src, category, id }) => {
             padding: "8px 16px",
             width: "100%",
             fontSize: 20,
-            background: "linear-gradient(90deg, #00d, #d00)"
+            background: "linear-gradient(90deg, #00d, #d00)",
           }}
           onClick={async (event) => {
             event.preventDefault()
-            
+
             const response = await post(`user/buyProduct`, {
-              productId: id
+              productId: id,
             })
 
-            if(response.success) {
+            if (response.success) {
               window.location.reload()
             }
           }}

@@ -15,9 +15,11 @@ export const Home = () => {
         style={{
           marginTop: 100,
           marginBottom: 100,
-          fontSize: 50
+          fontSize: 50,
         }}
-      >Home</h1>
+      >
+        Home
+      </h1>
       <div>
         <CreateMenuButton value="Registration" path="registration" />
         <CreateMenuButton value="Login" path="login" />

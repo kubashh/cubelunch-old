@@ -13,7 +13,7 @@ export const NoPage = () => {
         style={{
           fontSize: 100,
           textAlign: "center",
-          marginTop: "25vh" 
+          marginTop: "25vh",
         }}
       >
         Nie ma takiej strony, kliknij gdziekolwiek aby przejdźć na stronę główną

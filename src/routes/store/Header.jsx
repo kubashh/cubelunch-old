@@ -9,8 +9,9 @@ export const Header = () => {
 
   useEffect(() => {
     post(`user/get`).then((data) => {
-    setUser(data)
-  })})
+      setUser(data)
+    })
+  })
 
   const inputStyle = {
     margin: "6px 10px",
@@ -18,22 +19,18 @@ export const Header = () => {
     borderRadius: 10,
     padding: "",
     backgroundColor: "#333",
-    fontSize: 20
+    fontSize: 20,
   }
 
-  if(!user) {
-    return (
-      <div>
-        Loading...
-      </div>
-    )
+  if (!user) {
+    return <div>Loading...</div>
   }
 
   return (
     <div
       style={{
         display: "flex",
-        flexDirection: "row-reverse"
+        flexDirection: "row-reverse",
       }}
     >
       <input
@@ -48,25 +45,19 @@ export const Header = () => {
       <input
         type="button"
         style={inputStyle}
-        onClick={() => {
-          
-        }}
+        onClick={() => {}}
         value="Ustawienia"
       />
       <input
         type="button"
         style={inputStyle}
-        onClick={() => {
-          
-        }}
+        onClick={() => {}}
         value={user.cash}
       />
       <input
         type="button"
         style={inputStyle}
-        onClick={() => {
-          
-        }}
+        onClick={() => {}}
         value="Produkty"
       />
     </div>

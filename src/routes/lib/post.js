@@ -3,12 +3,12 @@ export const post = async (path, dataToSend = {}) => {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      Cookie: document.cookie
+      Cookie: document.cookie,
     },
-    body: JSON.stringify(dataToSend)
+    body: JSON.stringify(dataToSend),
   })
 
-  if(!response.ok) {
+  if (!response.ok) {
     console.error(`nie udało się połączyć z serwerem. response: ${response}`)
 
     return null

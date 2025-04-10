@@ -7,7 +7,7 @@ import { autologin } from "../lib/autologin"
 export const Login = () => {
   const [form, setForm] = useState({
     login: ``,
-    password: ``
+    password: ``,
   })
 
   const inputsStyle = {
@@ -15,7 +15,7 @@ export const Login = () => {
     border: 0,
     borderRadius: 20,
     padding: "8px 16px",
-    fontSize: 20
+    fontSize: 20,
   }
 
   return (
@@ -29,14 +29,14 @@ export const Login = () => {
           width: 400,
           borderRadius: 20,
           padding: "10px 30px",
-          marginTop: 100
+          marginTop: 100,
         }}
       >
         <div
           style={{
             ...inputsStyle,
             fontWeight: "bold",
-            fontSize: 30
+            fontSize: 30,
           }}
         >
           Login
@@ -50,7 +50,7 @@ export const Login = () => {
             event.preventDefault()
             setForm({
               ...form,
-              login: event.target.value
+              login: event.target.value,
             })
           }}
         />
@@ -63,7 +63,7 @@ export const Login = () => {
             event.preventDefault()
             setForm({
               ...form,
-              password: event.target.value
+              password: event.target.value,
             })
           }}
         />
@@ -76,8 +76,8 @@ export const Login = () => {
 
             const { success, verificationCode } = response
 
-            if(success) {
-              if(verificationCode) {
+            if (success) {
+              if (verificationCode) {
                 console.log(verificationCode)
                 setVerificationCode(verificationCode)
                 autologin()
@@ -92,9 +92,11 @@ export const Login = () => {
             textAlign: "right",
             textDecoration: "none",
             color: "white",
-            marginTop: 10
+            marginTop: 10,
           }}
-        >Zarejestruj się</a>
+        >
+          Zarejestruj się
+        </a>
       </from>
     </center>
   )

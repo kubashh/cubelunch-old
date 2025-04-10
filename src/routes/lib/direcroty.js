@@ -1,5 +1,5 @@
 export const directory = (path) => {
-  return `/cubelunch/${path}`
+  return `/cubelunch-old/${path}`
 }
 
 export const changeWindowLocation = (path) => {

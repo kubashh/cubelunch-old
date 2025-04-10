@@ -10,7 +10,7 @@ export const configureImage = (image, form, setForm) => {
         console.log(`After: ${src.length}`)
         setForm({
           ...form,
-          src: src
+          src: src,
         })
       })
     })
